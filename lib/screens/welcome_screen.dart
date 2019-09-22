@@ -9,7 +9,19 @@ class WelcomeScreen extends StatefulWidget {
   _WelcomeScreenState createState() => _WelcomeScreenState();
 }
 
-class _WelcomeScreenState extends State<WelcomeScreen> {
+// [with SingleTickerProviderStateMixin] is used to create one animation on our screen
+class _WelcomeScreenState extends State<WelcomeScreen>
+    with SingleTickerProviderStateMixin {
+  AnimationController controller;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = AnimationController(
+      duration: Duration(seconds: 1),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
