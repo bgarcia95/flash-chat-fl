@@ -65,9 +65,9 @@ class _LoginScreenState extends State<LoginScreen> {
               color: Colors.lightBlueAccent,
               onPressed: () async {
                 try {
-                  final existingUser = await _auth.signInWithEmailAndPassword(
+                  final user = await _auth.signInWithEmailAndPassword(
                       email: email, password: password);
-                  if (existingUser != null) {
+                  if (user != null) {
                     Navigator.pushNamed(context, ChatScreen.id);
                   }
                 } catch (e) {
